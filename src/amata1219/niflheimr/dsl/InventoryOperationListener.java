@@ -11,6 +11,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.inventory.InventoryOpenEvent;
+import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 
@@ -20,6 +21,8 @@ public class InventoryOperationListener implements Listener {
     public void onClick(InventoryClickEvent event) {
         Inventory inventory = event.getClickedInventory();
         if (inventory == null) return;
+
+        if (inventory.getType().equals(InventoryType.PLAYER)) return;
 
         InventoryLayout layout = tryExtractInventoryLayout(event.getInventory());
         if (layout == null) return;
