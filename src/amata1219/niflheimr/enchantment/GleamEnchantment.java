@@ -10,7 +10,7 @@ public class GleamEnchantment extends Enchantment {
     public static final GleamEnchantment INSTANCE = new GleamEnchantment();
 
     private GleamEnchantment() {
-        super(NamespacedKey.minecraft("niflheimr_gleam"));
+        super(100);
     }
 
     @Override
@@ -25,7 +25,7 @@ public class GleamEnchantment extends Enchantment {
 
     @Override
     public EnchantmentTarget getItemTarget() {
-        return EnchantmentTarget.VANISHABLE;
+        return EnchantmentTarget.ALL;
     }
 
     @Override

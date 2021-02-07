@@ -1,13 +1,11 @@
 package amata1219.niflheimr.dsl.component;
 
-import amata1219.niflheimr.enchantment.GleamEnchantment;
 import amata1219.niflheimr.constant.Constants;
-import com.google.common.collect.Iterables;
+import amata1219.niflheimr.enchantment.GleamEnchantment;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.Damageable;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.*;
@@ -58,7 +56,7 @@ public class Icon {
 
         ItemMeta meta = item.getItemMeta();
         if(meta != null){
-            if(meta instanceof Damageable) ((Damageable) meta).setDamage(damage);
+            item.setDurability((short) damage);
             meta.setDisplayName(displayName);
             meta.setLore(lore);
             enchantments.forEach((enchantment, level) -> meta.addEnchant(enchantment, level, true));
