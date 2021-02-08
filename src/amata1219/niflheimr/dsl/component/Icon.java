@@ -60,7 +60,7 @@ public class Icon {
             meta.setDisplayName(displayName);
             meta.setLore(lore);
             enchantments.forEach((enchantment, level) -> meta.addEnchant(enchantment, level, true));
-            meta.addItemFlags(Iterables.toArray(flags, ItemFlag.class));
+            meta.addItemFlags(flags.toArray(new ItemFlag[0]));
             item.setItemMeta(meta);
         }
 
